@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[KBBVehicle] (
+    [KBBVehicleId]                  INT           NOT NULL,
+    [TrimId]                        INT           NULL,
+    [ManufacturerAssignedModelCode] VARCHAR (30)  NULL,
+    [SubTrim]                       VARCHAR (30)  NULL,
+    [DisplayName]                   VARCHAR (255) NULL,
+    [VehicleTypeId]                 INT           NULL,
+    [VehicleTypeDisplayName]        VARCHAR (15)  NULL,
+    [SortOrder]                     INT           NULL,
+    [DisplayNameAdditionalData]     VARCHAR (255) NULL,
+    [KBBSortOrder]                  INT           NULL,
+    [AvailabilityStatus]            VARCHAR (25)  NULL,
+    [AvailabilityStatusEndDate]     DATETIME      NULL,
+    [MarketName]                    VARCHAR (50)  NULL,
+    [RelatedVehicleId]              INT           NULL,
+    [AvailabilityStatusStartDate]   DATETIME      NULL,
+    [LowVolume]                     BIT           NULL,
+    [CPOAdjustment]                 BIT           NULL,
+    [MileageGroupId]                INT           NULL,
+    [BlueBookName]                  VARCHAR (100) NULL,
+    [ShortName]                     VARCHAR (50)  NULL,
+    CONSTRAINT [PK_Vehicle] PRIMARY KEY CLUSTERED ([KBBVehicleId] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [fk_Vehicle_Trim] FOREIGN KEY ([TrimId]) REFERENCES [dbo].[Trim] ([TrimId])
+);
+

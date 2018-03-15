@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>KellyBlueBook</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{dc5e2b64-1af7-4012-9831-a452e9358e21}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>KellyBlueBook</RootNamespace>
+    <AssemblyName>KellyBlueBook</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="PreEvaluate\" />
+    <Folder Include="PreEvaluate\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="etl\" />
+    <Folder Include="etl\Tables\" />
+    <Folder Include="label\" />
+    <Folder Include="label\Tables\" />
+    <Folder Include="values\" />
+    <Folder Include="values\Tables\" />
+    <Folder Include="values\Views\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="label\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="values\Functions\" />
+    <Folder Include="values\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="PreEvaluate\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="PreEvaluate\Tables\RegionZipCode.sql" />
+    <Build Include="dbo\Tables\ConversionSet.sql" />
+    <Build Include="PreEvaluate\Tables\Specification.sql" />
+    <Build Include="dbo\Tables\ConversionSetItem.sql" />
+    <Build Include="PreEvaluate\Tables\SpecificationCategory.sql" />
+    <Build Include="dbo\Tables\DataVersion.sql" />
+    <Build Include="PreEvaluate\Tables\SpecificationValue.sql" />
+    <Build Include="dbo\Tables\EditorialContent.sql" />
+    <Build Include="PreEvaluate\Tables\Trim.sql" />
+    <Build Include="dbo\Tables\EditorialContext.sql" />
+    <Build Include="PreEvaluate\Tables\ValueType.sql" />
+    <Build Include="dbo\Tables\EditorialGroup.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleCategory.sql" />
+    <Build Include="dbo\Tables\EditorialSectionHeader.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleCompetitiveSet.sql" />
+    <Build Include="dbo\Tables\EditorialText.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleGroup.sql" />
+    <Build Include="dbo\Tables\GenerationGroup.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleMarketCondition.sql" />
+    <Build Include="dbo\Tables\GenerationTrim.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleNote.sql" />
+    <Build Include="dbo\Tables\Make.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleOption.sql" />
+    <Build Include="dbo\Tables\MileageGroupAdjustment.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleOptionCategory.sql" />
+    <Build Include="dbo\Tables\MileageRange.sql" />
+    <Build Include="PreEvaluate\Tables\VehiclePriceRange.sql" />
+    <Build Include="dbo\Tables\Model.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleRegion.sql" />
+    <Build Include="dbo\Tables\ModelYear.sql" />
+    <Build Include="PreEvaluate\Tables\VINMakePattern.sql" />
+    <Build Include="dbo\Tables\ModelYearCategoryNote.sql" />
+    <Build Include="PreEvaluate\Tables\VINOptionEquipment.sql" />
+    <Build Include="dbo\Tables\NCBBRule.sql" />
+    <Build Include="PreEvaluate\Tables\VINOptionEquipmentPattern.sql" />
+    <Build Include="dbo\Tables\NewCarStandardEquipment.sql" />
+    <Build Include="PreEvaluate\Tables\VINVehiclePattern.sql" />
+    <Build Include="dbo\Tables\OptionRegionPriceAdjustment.sql" />
+    <Build Include="PreEvaluate\Tables\Year.sql" />
+    <Build Include="dbo\Tables\OptionRelationship.sql" />
+    <Build Include="PreEvaluate\Tables\ZipCode.sql" />
+    <Build Include="dbo\Tables\OptionRelationshipCondition.sql" />
+    <Build Include="dbo\Tables\OptionRelationshipConditionSet.sql" />
+    <Build Include="dbo\Tables\OptionRelationshipSet.sql" />
+    <Build Include="dbo\Tables\OptionSpecificationSet.sql" />
+    <Build Include="dbo\Tables\OptionSpecificationSetItem.sql" />
+    <Build Include="dbo\Tables\OptionSpecificationSetValue.sql" />
+    <Build Include="dbo\Tables\OptionSpecificationValue.sql" />
+    <Build Include="dbo\Tables\PriceType.sql" />
+    <Build Include="dbo\Tables\ProgramContext.sql" />
+    <Build Include="dbo\Tables\Region.sql" />
+    <Build Include="dbo\Tables\RegionAdjustmentTypePriceType.sql" />
+    <Build Include="PreEvaluate\Tables\Category.sql" />
+    <Build Include="dbo\Tables\RegionBasePrice.sql" />
+    <Build Include="PreEvaluate\Tables\CategoryRelationship.sql" />
+    <Build Include="dbo\Tables\RegionGroupAdjustment.sql" />
+    <Build Include="PreEvaluate\Tables\ConversionSet.sql" />
+    <Build Include="dbo\Tables\RegionZipCode.sql" />
+    <Build Include="PreEvaluate\Tables\ConversionSetItem.sql" />
+    <Build Include="dbo\Tables\Specification.sql" />
+    <Build Include="PreEvaluate\Tables\DataVersion.sql" />
+    <Build Include="dbo\Tables\SpecificationCategory.sql" />
+    <Build Include="PreEvaluate\Tables\EditorialContent.sql" />
+    <Build Include="dbo\Tables\SpecificationValue.sql" />
+    <Build Include="PreEvaluate\Tables\EditorialContext.sql" />
+    <Build Include="dbo\Tables\Trim.sql" />
+    <Build Include="PreEvaluate\Tables\EditorialGroup.sql" />
+    <Build Include="dbo\Tables\ValueType.sql" />
+    <Build Include="PreEvaluate\Tables\EditorialSectionHeader.sql" />
+    <Build Include="dbo\Tables\KBBVehicle.sql" />
+    <Build Include="PreEvaluate\Tables\EditorialText.sql" />
+    <Build Include="dbo\Tables\VehicleCategory.sql" />
+    <Build Include="PreEvaluate\Tables\GenerationGroup.sql" />
+    <Build Include="dbo\Tables\VehicleCompetitiveSet.sql" />
+    <Build Include="PreEvaluate\Tables\GenerationTrim.sql" />
+    <Build Include="dbo\Tables\VehicleGroup.sql" />
+    <Build Include="PreEvaluate\Tables\KBBVehicle.sql" />
+    <Build Include="dbo\Tables\VehicleMarketCondition.sql" />
+    <Build Include="PreEvaluate\Tables\Make.sql" />
+    <Build Include="dbo\Tables\VehicleNote.sql" />
+    <Build Include="PreEvaluate\Tables\MileageGroupAdjustment.sql" />
+    <Build Include="dbo\Tables\VehicleOption.sql" />
+    <Build Include="PreEvaluate\Tables\MileageRange.sql" />
+    <Build Include="dbo\Tables\VehicleOptionCategory.sql" />
+    <Build Include="PreEvaluate\Tables\Model.sql" />
+    <Build Include="dbo\Tables\VehiclePriceRange.sql" />
+    <Build Include="dbo\Tables\AndrewTest.sql" />
+    <Build Include="PreEvaluate\Tables\ModelYear.sql" />
+    <Build Include="dbo\Tables\VehicleRegion.sql" />
+    <Build Include="etl\Tables\tblKBBVehicleInCarvanaOLTPStage.sql" />
+    <Build Include="PreEvaluate\Tables\ModelYearCategoryNote.sql" />
+    <Build Include="dbo\Tables\VINMakePattern.sql" />
+    <Build Include="PreEvaluate\Tables\NCBBRule.sql" />
+    <Build Include="dbo\Tables\VINOptionEquipment.sql" />
+    <Build Include="PreEvaluate\Tables\NewCarStandardEquipment.sql" />
+    <Build Include="dbo\Tables\VINOptionEquipmentPattern.sql" />
+    <Build Include="PreEvaluate\Tables\OptionRegionPriceAdjustment.sql" />
+    <Build Include="dbo\Tables\VINVehiclePattern.sql" />
+    <Build Include="PreEvaluate\Tables\OptionRelationship.sql" />
+    <Build Include="dbo\Tables\Year.sql" />
+    <Build Include="PreEvaluate\Tables\OptionRelationshipCondition.sql" />
+    <Build Include="dbo\Tables\ZipCode.sql" />
+    <Build Include="PreEvaluate\Tables\OptionRelationshipConditionSet.sql" />
+    <Build Include="label\Tables\OptionGroup.sql" />
+    <Build Include="PreEvaluate\Tables\OptionRelationshipSet.sql" />
+    <Build Include="PreEvaluate\Tables\OptionSpecificationSet.sql" />
+    <Build Include="PreEvaluate\Tables\OptionSpecificationSetItem.sql" />
+    <Build Include="dbo\Tables\VehicleTypicalMiles.sql" />
+    <Build Include="PreEvaluate\Tables\OptionSpecificationSetValue.sql" />
+    <Build Include="PreEvaluate\Tables\VehicleTypicalMiles.sql" />
+    <Build Include="PreEvaluate\Tables\OptionSpecificationValue.sql" />
+    <Build Include="PreEvaluate\Tables\PriceType.sql" />
+    <Build Include="values\Tables\CarvanaRetailVehiclePriceRange_stage.sql" />
+    <Build Include="PreEvaluate\Tables\ProgramContext.sql" />
+    <Build Include="values\Tables\CarvanaRetailVehiclePriceRange.sql" />
+    <Build Include="PreEvaluate\Tables\Region.sql" />
+    <Build Include="values\Tables\KBBVehiclePriceRange_stage.sql" />
+    <Build Include="PreEvaluate\Tables\RegionAdjustmentTypePriceType.sql" />
+    <Build Include="values\Tables\KBBVehiclePriceRange.sql" />
+    <Build Include="PreEvaluate\Tables\RegionBasePrice.sql" />
+    <Build Include="dbo\Tables\Category.sql" />
+    <Build Include="values\Tables\MostExpensiveOptionCombination.sql" />
+    <Build Include="PreEvaluate\Tables\RegionGroupAdjustment.sql" />
+    <Build Include="dbo\Tables\CategoryRelationship.sql" />
+    <Build Include="values\Views\vMaximumValueVehicleEquipmentOptions.sql" />
+    <Build Include="values\Views\vMaximumEquipmentDefaultOptionsAdjustment.sql" />
+    <Build Include="values\Views\vMaximumOptionAdjustment.sql" />
+    <Build Include="values\Views\vMileageAdjustment.sql" />
+    <Build Include="values\Views\vMinimumOptionAdjustment.sql" />
+    <Build Include="values\Views\vRegionBasePrice.sql" />
+    <Build Include="dbo\Views\vDetermineVehicleTrim.sql" />
+    <Build Include="dbo\Views\vDetermineCarvanaRepresentativeZip.sql" />
+    <Build Include="dbo\Views\vDetermineCarvanaTradeInList.sql" />
+    <Build Include="label\Views\vOptionGroupRepresentative.sql" />
+    <Build Include="Security\db_execsp.sql" />
+    <Build Include="Security\db_showplan.sql" />
+    <Build Include="Security\db_viewdefinition.sql" />
+    <Build Include="Security\COEXIST_svc-swdpa-prod.sql" />
+    <Build Include="Security\COEXIST_svc-ssis-test.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DevOPS.sql" />
+    <Build Include="Security\COEXIST_AHANSON.sql" />
+    <Build Include="Security\COEXIST_svc-inventory-dev.sql" />
+    <Build Include="Security\UGLYDUCKLING_svc-infa-dev.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-DB Dev General.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-Analytics General.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-App Dev General.sql" />
+    <Build Include="Security\COEXIST_RG-MIS-BA General.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="values\Functions\fnMax.sql" />
+    <Build Include="values\Stored Procedures\stpCreateCarvanaRetailVehiclePriceRanges.sql" />
+    <Build Include="values\Stored Procedures\stpCreateMinMaxVehicleValues.sql" />
+    <Build Include="dbo\Stored Procedures\stpConfigurationDataFromVIN.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetOptionsForVehicle.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetConfiguredVehicleValue_Slim_AdminTest.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetConfiguredVehicleValue.sql" />
+    <Build Include="PreEvaluate\Stored Procedures\stpConfigurationDataFromVIN.sql" />
+    <Build Include="PreEvaluate\Stored Procedures\stpGetConfiguredVehicleValue.sql" />
+    <Build Include="PreEvaluate\Stored Procedures\stpGetOptionsForVehicle.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetConfiguredVehicleValue_Slim.sql" />
+    <Build Include="PreEvaluate\Stored Procedures\stpGetConfiguredVehicleValue_Slim.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetVehicleOptionDisplayList.sql" />
+    <Build Include="dbo\Stored Procedures\stpGetEquipmentByVehicleID.sql" />
+    <Build Include="Database Triggers\Disallow_Securitychanges.sql" />
+    <Build Include="dbo\User Defined Types\tblVehicleTableType.sql" />
+    <Build Include="dbo\User Defined Types\tblVehicleOptionTableType.sql" />
+    <Build Include="Security\COEXIST_AHANSON_1.sql" />
+    <Build Include="Security\COEXIST_svc-swdpa-prod_1.sql" />
+    <Build Include="Security\etl.sql" />
+    <Build Include="Security\label.sql" />
+    <Build Include="Security\PreEvaluate.sql" />
+    <Build Include="Security\values.sql" />
+    <Build Include="ExtendedProperties.sql" />
+  </ItemGroup>
+</Project>
