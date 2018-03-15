@@ -1,4 +1,5 @@
-﻿CREATE TABLE [dbo].[Category] (
+﻿--Testing
+CREATE TABLE [dbo].[Category] (
     [CategoryId]              INT           NOT NULL,
     [CategoryTypeId]          INT           NULL,
     [CategoryTypeDisplayName] VARCHAR (25)  NULL,
